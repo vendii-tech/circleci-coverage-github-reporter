@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Report Jest/Istanbul coverage statistics from CircleCI to GitHub",
   "main": "index.js",
-  "repository": "https://github.com/andrscrrn/coverage-github-reporter",
+  "repository": "https://github.com/andrscrrn/circleci-coverage-github-reporter",
   "author": "Andres Carreño <hello@andrescarreno.co>",
   "license": "MIT",
   "bin": {
