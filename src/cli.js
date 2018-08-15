@@ -4,12 +4,12 @@ const args = require('args')
 
 args
   .option(
-    ['cj', 'coverage-json'],
+    ['j', 'coverage-json'],
     'Relative path to istanbul coverage JSON',
     'coverage/coverage-final.json'
   )
   .option(
-    ['cr', 'coverage-root'],
+    ['r', 'coverage-root'],
     'Relative path to coverage html root (for artifact links)',
     'coverage/lcov-report'
   )
