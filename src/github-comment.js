@@ -4,44 +4,47 @@ const { parseFile } = require('./coverage/parse')
 const { format } = require('./coverage/format')
 
 exports.formatComment = function ({
-  formatted: {
-    status,
-    changed,
-    folders
-  },
+  formatted: { status, changed, folders },
   baseArtifactUrl,
   buildNum,
   buildUrl,
   priorBuildNum,
   priorBuildUrl,
-  branch
+  branch,
+  verbose
 }) {
   return `
 **[Code Coverage](${baseArtifactUrl}/index.html): ${status}** 
-${changed}
+${verbose ? changed : ''}
 <details>
 <summary><strong>🗂 Folder Coverage</strong></summary>
 ${folders}
 </details>
 <p>
 
-From **Circle CI [build ${buildNum}](${buildUrl})** ${priorBuildNum
-    ? `compared to [build ${priorBuildNum}](${priorBuildUrl}) (from \`${branch}\` branch)`
-    : ''} – 🤖[coverage-github-reporter](https://github.com/vivlabs/coverage-github-reporter)`
+From **Circle CI [build ${buildNum}](${buildUrl})** ${
+    priorBuildNum
+      ? `compared to [build ${priorBuildNum}](${priorBuildUrl}) (from \`${branch}\` branch)`
+      : ''
+  } – 🤖[circleci-coverage-github-reporter](https://github.com/andrscrrn/circleci-coverage-github-reporter)`
 }
 
 exports.postComment = function postComment ({
   coverageJsonFilename = 'coverage/coverage-final.json',
   coverageHtmlRoot = 'coverage/lcov-report',
   defaultBaseBranch = 'master',
-  root = process.cwd()
+  root = process.cwd(),
+  verbose = true
 }) {
   const bot = Bot.create()
 
   const coverage = parseFile(root, resolve(root, coverageJsonFilename))
 
   const branch = bot.getBaseBranch(defaultBaseBranch)
-  const { priorCoverage, priorBuild } = bot.getPriorBuild(branch, coverageJsonFilename)
+  const { priorCoverage, priorBuild } = bot.getPriorBuild(
+    branch,
+    coverageJsonFilename
+  )
 
   if (!priorCoverage) {
     console.log(`No prior coverage found`)
@@ -54,8 +57,12 @@ exports.postComment = function postComment ({
     buildNum: process.env.CIRCLE_BUILD_NUM,
     buildUrl: process.env.CIRCLE_BUILD_URL,
     priorBuildNum: priorBuild,
-    priorBuildUrl: process.env.CIRCLE_BUILD_URL.replace(/\/\d+$/, `/${priorBuild}`),
-    branch
+    priorBuildUrl: process.env.CIRCLE_BUILD_URL.replace(
+      /\/\d+$/,
+      `/${priorBuild}`
+    ),
+    branch,
+    verbose
   })
 
   const result = JSON.parse(bot.comment(text))

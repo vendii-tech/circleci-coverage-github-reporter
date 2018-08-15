@@ -7,7 +7,7 @@ general:
 defaults: &defaults
   working_directory: ~/app
   docker:
-    - image: node:8.9.3
+    - image: node:8.11.3
 
 jobs:
   build:
@@ -50,7 +50,7 @@ jobs:
 deployment:
   production:
     tag: /v[0-9]+(\.[0-9]+)*(-.*)?/
-    owner: vivlabs
+    owner: andrscrrn
 
 experimental:
   notify:

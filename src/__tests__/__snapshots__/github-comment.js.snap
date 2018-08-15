@@ -23,6 +23,21 @@ exports[`formatComment formats with changes 1`] = `
 From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch) – 🤖[coverage-github-reporter](https://github.com/vivlabs/coverage-github-reporter)"
 `;
 
+exports[`formatComment formats with changes and verbose flag false 1`] = `
+"
+**[Code Coverage](http://example.com/artifacts/index.html): 30.00% 💔 +11.43% 😀** 
+
+<details>
+<summary><strong>🗂 Folder Coverage</strong></summary>
+<pre>
+<a href=\\"http://example.com/artifacts/index.html\\">src/</a>    10.00% 💔
+</pre>
+</details>
+<p>
+
+From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch) – 🤖[coverage-github-reporter](https://github.com/vivlabs/coverage-github-reporter)"
+`;
+
 exports[`formatComment formats with no changes 1`] = `
 "
 **[Code Coverage](http://example.com/artifacts/index.html): 58.66% 💛** 

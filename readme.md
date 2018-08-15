@@ -1,8 +1,10 @@
-# coverage-github-reporter
+# circleci-coverage-github-reporter
 
-[![npm version](https://badge.fury.io/js/coverage-github-reporter.svg)](https://badge.fury.io/js/coverage-github-reporter) [![CircleCI](https://circleci.com/gh/vivlabs/coverage-github-reporter.svg?style=svg)](https://circleci.com/gh/vivlabs/coverage-github-reporter)
+[![npm version](https://badge.fury.io/js/circleci-coverage-github-reporter.svg)](https://badge.fury.io/js/circleci-coverage-github-reporter) [![CircleCI](https://circleci.com/gh/andrscrrn/circleci-coverage-github-reporter.svg?style=svg)](https://circleci.com/gh/andrscrrn/circleci-coverage-github-reporter)
 
-Report Jest/Istanbul coverage statistics from CircleCI to GitHub
+Report Jest/Istanbul coverage statistics from CircleCI to GitHub.
+
+Project based on [coverage-github-reporter](https://github.com/vivlabs/coverage-github-reporter)
 
 ## Setup
 
@@ -32,19 +34,23 @@ To access artifacts for private repos, a CircleCI API token is required.
 1. Open the CircleCI project settings
 2. Navigate to Permissions > API Permissions
 3. Click "Create Token"
-  - Select "Build Artifacts" from scope dropdown
-  - Name the token "artifacts" (or whatever you prefer)
+
+- Select "Build Artifacts" from scope dropdown
+- Name the token "artifacts" (or whatever you prefer)
+
 4. Navigate to Build Settings > Environment variables
 5. Add a new variable called `CIRCLE_CI_API_TOKEN` with the new token
 
 ### Run Jest with Coverage reporting
 
 Add to your `package.json`:
+
 ```bash
-npm install --save-dev coverage-github-reporter
+npm install --save-dev circleci-coverage-github-reporter
 ```
 
 If you're using Jest, I suggest adding a test script along these lines:
+
 ```json
     "scripts": {
         "test-ci": "jest --ci --silent --coverage"
@@ -56,6 +62,7 @@ This will generate a coverage in `coverage/`
 ### CircleCI configuration
 
 Update your `.circleci/config.yml`:
+
 ```yml
 general:
   artifacts:
@@ -77,16 +84,17 @@ jobs:
 
       - run:
           name: Post coverage comment to GitHub
-          command: npx report-coverage
+          command: npx circleci-coverage-github-reporter
 ```
 
 ### Customization
 
-The `report-coverage` CLI has some options to customize behavior:
+The `circleci-coverage-github-reporter` CLI has some options to customize behavior:
 
 ```
   Options:
 
+    -v, --verbose [true, false]  Defaults to true
     -b, --branch [value]         Base branch to use if not PR (defaults to "master")
     -j, --coverage-json [value]  Relative path to istanbul coverage JSON (defaults to "coverage/coverage-final.json")
     -r, --coverage-root [value]  Relative path to coverage html root (for artifact links) (defaults to "coverage/lcov-report")
