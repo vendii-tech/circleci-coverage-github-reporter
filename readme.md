@@ -4,7 +4,7 @@
 
 Report Jest/Istanbul coverage statistics from CircleCI to GitHub.
 
-Project based on [coverage-github-reporter](https://github.com/vivlabs/coverage-github-reporter)
+Project based on [coverage-github-reporter](https://github.com/vivlabs/coverage-github-reporter).
 
 ## Setup
 
