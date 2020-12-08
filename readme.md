@@ -46,7 +46,7 @@ To access artifacts for private repos, a CircleCI API token is required.
 Add to your `package.json`:
 
 ```bash
-npm install --save-dev circleci-coverage-github-reporter
+npm install --save-dev @godaddy-wordpress/circleci-coverage-github-reporter
 ```
 
 If you're using Jest, I suggest adding a test script along these lines:
