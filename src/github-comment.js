@@ -26,7 +26,7 @@ From **Circle CI [build ${buildNum}](${buildUrl})** ${
     priorBuildNum
       ? `compared to [build ${priorBuildNum}](${priorBuildUrl}) (from \`${branch}\` branch)`
       : ''
-  } – 🤖[circleci-coverage-github-reporter](https://github.com/andrscrrn/circleci-coverage-github-reporter)`
+  }`
 }
 
 exports.postComment = function postComment ({

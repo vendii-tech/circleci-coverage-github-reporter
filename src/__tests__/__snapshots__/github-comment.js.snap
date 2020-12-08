@@ -20,7 +20,7 @@ exports[`formatComment formats with changes 1`] = `
 </details>
 <p>
 
-From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch) – 🤖[circleci-coverage-github-reporter](https://github.com/andrscrrn/circleci-coverage-github-reporter)"
+From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch)"
 `;
 
 exports[`formatComment formats with changes and verbose flag false 1`] = `
@@ -35,7 +35,7 @@ exports[`formatComment formats with changes and verbose flag false 1`] = `
 </details>
 <p>
 
-From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch) – 🤖[circleci-coverage-github-reporter](https://github.com/andrscrrn/circleci-coverage-github-reporter)"
+From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch)"
 `;
 
 exports[`formatComment formats with no changes 1`] = `
@@ -51,7 +51,7 @@ exports[`formatComment formats with no changes 1`] = `
 </details>
 <p>
 
-From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch) – 🤖[circleci-coverage-github-reporter](https://github.com/andrscrrn/circleci-coverage-github-reporter)"
+From **Circle CI [build 2](http://example.com/build/2)** compared to [build 1](http://example.com/build/1) (from \`master\` branch)"
 `;
 
 exports[`formatComment formats with no prior build 1`] = `
@@ -67,5 +67,5 @@ exports[`formatComment formats with no prior build 1`] = `
 </details>
 <p>
 
-From **Circle CI [build 2](http://example.com/build/2)**  – 🤖[circleci-coverage-github-reporter](https://github.com/andrscrrn/circleci-coverage-github-reporter)"
+From **Circle CI [build 2](http://example.com/build/2)**"
 `;
