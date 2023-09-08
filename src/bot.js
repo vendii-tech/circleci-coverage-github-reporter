@@ -66,7 +66,7 @@ Bot.prototype.getPriorBuild = function (branch, coverageJsonFilename) {
     for (const build of baseBranchBuilds) {
       const buildNum = build.build_num
       if (process.env.CIRCLE_WORKFLOW_ID) {
-        if (!build.build_parameters || build.build_parameters.CIRCLE_JOB !== process.env.CIRCLE_JOB) {
+        if (!build.workflows || build.workflows.job_name !== process.env.CIRCLE_JOB) {
           console.log(`Build ${buildNum} doesn't match workflow job`)
           // Different job…
           continue
