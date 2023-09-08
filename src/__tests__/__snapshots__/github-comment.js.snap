@@ -67,5 +67,5 @@ exports[`formatComment formats with no prior build 1`] = `
 </details>
 <p>
 
-From **Circle CI [build 2](http://example.com/build/2)**"
+From **Circle CI [build 2](http://example.com/build/2)** "
 `;
