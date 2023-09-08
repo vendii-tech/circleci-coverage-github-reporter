@@ -1,5 +1,5 @@
 {
-  "name": "@vendii-tech/circleci-coverage-github-reporter",
+  "name": "@vendii/circleci-coverage-github-reporter",
   "version": "1.0.2",
   "description": "Report Jest/Istanbul coverage statistics from CircleCI to GitHub",
   "main": "index.js",
