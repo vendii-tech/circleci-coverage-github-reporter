@@ -1,6 +1,6 @@
 # circleci-coverage-github-reporter
 
-[![npm version](https://badge.fury.io/js/%40godaddy-wordpress%2Fcircleci-coverage-github-reporter.svg)](https://badge.fury.io/js/%40godaddy-wordpress%2Fcircleci-coverage-github-reporter)
+[![npm version](https://badge.fury.io/js/%40vendii-tech%2Fcircleci-coverage-github-reporter.svg)](https://badge.fury.io/js/%40vendii-tech%2Fcircleci-coverage-github-reporter)
 
 Report Jest/Istanbul coverage statistics from CircleCI to GitHub.
 
@@ -46,7 +46,7 @@ To access artifacts for private repos, a CircleCI API token is required.
 Add to your `package.json`:
 
 ```bash
-npm install --save-dev @godaddy-wordpress/circleci-coverage-github-reporter
+npm install --save-dev @vendii-tech/circleci-coverage-github-reporter
 ```
 
 If you're using Jest, I suggest adding a test script along these lines:
