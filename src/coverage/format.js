@@ -91,6 +91,10 @@ exports.format = function (report, priorReport = {}, baseUrl = undefined) {
 
     const folderReport = report[path]
     const folderPriorReport = priorReport[path]
+
+    console.log('folderReport: ' + JSON.stringify(folderReport))
+    console.log('folderPriorReport: ' + JSON.stringify(folderPriorReport))
+
     const { htmlPath } = folderReport
     const link = htmlPath + 'index.html'
     if (!folderPriorReport || getPercent(folderReport) !== getPercent(folderPriorReport)) {
@@ -103,6 +107,11 @@ exports.format = function (report, priorReport = {}, baseUrl = undefined) {
       for (const file of Object.keys(folderReport.files)) {
         const fileStats = folderReport.files[file]
         const priorFileStats = folderPriorReport && folderPriorReport.files[file]
+
+        console.log('file: ' + file)
+        console.log('fileStats: ' + JSON.stringify(fileStats))
+        console.log('prioFileStats: ' + JSON.stringify(priorFileStats))
+
         if (priorFileStats
             ? getPercent(fileStats) !== getPercent(priorFileStats)
             : getPercent(fileStats) < 100
@@ -123,6 +132,8 @@ exports.format = function (report, priorReport = {}, baseUrl = undefined) {
       stats: folderReport
     })
   }
+
+  console.log('changed rows: ' + JSON.stringify(changedRows))
 
   function getTable (rows) {
     const comment = []
