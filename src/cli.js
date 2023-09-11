@@ -14,7 +14,7 @@ args
     'coverage/lcov-report'
   )
   .option(['b', 'branch'], 'Base branch to use if not PR', 'master')
-  .option(['v', 'verbose'], 'Verbose comments will be posted')
+  .option(['v', 'verbose'], 'Verbose comments will be posted', 'true')
 
 const { coverageJson, coverageHtml, branch, verbose } = args.parse(
   process.argv
