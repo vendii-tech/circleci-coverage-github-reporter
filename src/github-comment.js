@@ -13,6 +13,9 @@ exports.formatComment = function ({
   branch,
   verbose
 }) {
+  console.log('formatComment changed: ' + JSON.stringify(changed))
+  console.log('verbose: ' + verbose)
+
   return `
 **[Code Coverage](${baseArtifactUrl}/index.html): ${status}** 
 ${verbose ? changed : ''}

@@ -148,6 +148,9 @@ exports.format = function (report, priorReport = {}, baseUrl = undefined) {
     return comment.join('\n')
   }
 
+  const changedTable = getTable(changedRows)
+  console.log('changed table: ' + JSON.stringify(changedTable))
+
   return {
     status: formatDiffStats(report[ALL_FILES_PATH], priorReport[ALL_FILES_PATH], 0),
     changed: getTable(changedRows),
