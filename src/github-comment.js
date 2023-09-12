@@ -14,7 +14,7 @@ exports.formatComment = function ({
   verbose
 }) {
   return `
-**Code Coverage: ${status}** 
+**Code Coverage:: ${status} [Download report](${baseArtifactUrl}/coverage.tar.gz)** 
 ${verbose ? changed : ''}
 <p>
 
@@ -46,7 +46,7 @@ exports.postComment = function postComment ({
     console.log(`No prior coverage found`)
   }
 
-  const baseArtifactUrl = bot.artifactUrl(`/${coverageHtmlRoot}`)
+  const baseArtifactUrl = bot.artifactUrl(`/`)
   const text = exports.formatComment({
     formatted: format(coverage, priorCoverage, baseArtifactUrl),
     baseArtifactUrl,

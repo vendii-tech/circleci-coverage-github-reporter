@@ -1,6 +1,6 @@
 {
   "name": "@vendii/circleci-coverage-github-reporter",
-  "version": "1.0.6-new-formatting",
+  "version": "1.0.7-new-formatting",
   "description": "Report Jest/Istanbul coverage statistics from CircleCI to GitHub",
   "main": "index.js",
   "repository": "https://github.com/vendii-tech/circleci-coverage-github-reporter",

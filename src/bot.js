@@ -35,12 +35,8 @@ Bot.prototype.artifacts = function (buildNum) {
   return JSON.parse(curl(this.circleProjectUrl(`${buildNum}/artifacts`)))
 }
 
-Bot.prototype.oldArtifactUrl = Bot.prototype.artifactUrl
-
 Bot.prototype.artifactUrl = function (path) {
-  return this.oldArtifactUrl(path)
-    // Fix for CircleCI 2.0 URL format
-    .replace(`${process.env.HOME}/${process.env.CIRCLE_PROJECT_REPONAME}/`, '')
+  return `https://output.circle-artifacts.com/output/job/${process.env.CIRCLE_WORKFLOW_JOB_ID}/artifacts/${process.env.CIRCLE_NODE_INDEX}/${path}`
 }
 Bot.prototype.getJsonArtifact = function (url) {
   return JSON.parse(curl(`${url}?circle-token=${process.env.CIRCLE_CI_API_TOKEN}`))
