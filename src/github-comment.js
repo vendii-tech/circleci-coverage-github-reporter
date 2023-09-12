@@ -14,12 +14,8 @@ exports.formatComment = function ({
   verbose
 }) {
   return `
-**[Code Coverage](${baseArtifactUrl}/index.html): ${status}** 
+**Code Coverage: ${status}** 
 ${verbose ? changed : ''}
-<details>
-<summary><strong>🗂 Folder Coverage</strong></summary>
-${folders}
-</details>
 <p>
 
 From **Circle CI [build ${buildNum}](${buildUrl})** ${

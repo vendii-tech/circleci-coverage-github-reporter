@@ -78,7 +78,8 @@ exports.format = function (report, priorReport = {}, baseUrl = undefined) {
     if (!baseUrl) {
       return name
     }
-    return `<a href="${baseUrl}/${link}">${name}</a>`
+    return `${name}</a>`
+    // return `<a href="${baseUrl}/${link}">${name}</a>`
   }
 
   const changedRows = []
